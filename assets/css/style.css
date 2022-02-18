@@ -1,0 +1,68 @@
+:root {
+  --bg-mian-color: 221 42% 13%;
+  --clr-dark: #000;
+  --clr-white: #fff;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  --text-color: #222;
+  --bkg-color: #fff;
+}
+body.dark-theme {
+  --text-color: #eee;
+  --bkg-color: #121212;
+}
+
+@media (prefers-color-scheme: dark) {
+  /* defaults to dark theme */
+  body {
+    --text-color: var(--clr-white);
+    --bkg-color: hsl(var(--bg-mian-color))
+  }
+  body.light-theme {
+    --text-color: var(--clr-dark);
+    --bkg-color: var(--clr-white);
+  }
+}
+body {
+  background: var(--bkg-color);
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.container {
+  margin-inline: auto;
+  width: min(100% - 2rem, 680px);
+}
+.display-flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.space-between {
+  justify-content: space-between;
+}
+.input-wrapper {
+  position: relative;
+  outline: 1px solid green;
+  border-radius: 5px;
+  margin-block: 2rem;
+  padding: 1rem;
+  width: 100%;
+}
+.input-field {
+  outline: 1px solid blue;
+  border-radius: 5px;
+  padding-left: 2rem;
+  width: calc(100% - 85px);
+}
